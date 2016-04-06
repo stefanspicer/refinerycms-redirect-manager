@@ -12,6 +12,8 @@ module Refinery
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.redirects_admin_redirect_items_path }
           plugin.pathname = root
           plugin.menu_match = %r{refinery/redirects/redirect_items(/.*)?$}
+          plugin.position = 80
+          plugin.icon = 'icon icon-sitemap'
         end
       end
 

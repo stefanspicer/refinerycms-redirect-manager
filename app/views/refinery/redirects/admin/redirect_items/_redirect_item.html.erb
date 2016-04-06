@@ -5,8 +5,9 @@
       <span class="title">
         <%= redirect_item.notes.presence || redirect_item.src_path %>
       </span>
-      <span class='label gray-1-bg gray-6'><%= redirect_item.src_path %></span> to
-      <span class='label gray-1-bg gray-6'><%= redirect_item.dest_url %></span>
+      <span class='label gray-1-bg gray-6 text-lowercase'><%= redirect_item.src_path %></span>
+      <span><i class="icon icon-arrow-right"></i></span>
+      <span class='label gray-1-bg gray-6 text-lowercase'><%= redirect_item.dest_url %></span>
       <% if redirect_item.permanent? %>    <span class='label gray-5-bg'>Permanent (301)</span><% end %>
     </a>
 

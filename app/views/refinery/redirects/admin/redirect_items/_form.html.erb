@@ -77,7 +77,7 @@
                 externCheckboxToggled($(this).prop('checked'));
               });
 
-              if (!$dest_input.val().startsWith('/')) {
+              if ($dest_input.val().length > 0 && !$dest_input.val().startsWith('/')) {
                 $dest_external_checkbox.prop('checked', true);
                 externCheckboxToggled(true);
               }
