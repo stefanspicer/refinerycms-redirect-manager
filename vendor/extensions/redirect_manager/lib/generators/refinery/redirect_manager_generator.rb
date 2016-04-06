@@ -1,8 +1,8 @@
 module Refinery
-  class RedirectItemsGenerator < Rails::Generators::Base
+  class RedirectManagerGenerator < Rails::Generators::Base
 
     def rake_db
-      rake "refinery_redirect_items:install:migrations"
+      rake "refinery_redirect_manager:install:migrations"
     end
 
     def append_load_seed_data

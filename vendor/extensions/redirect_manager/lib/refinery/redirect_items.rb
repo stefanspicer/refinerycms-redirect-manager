@@ -1,7 +1,7 @@
 require 'refinerycms-core'
 
 module Refinery
-  autoload :RedirectItemsGenerator, 'generators/refinery/redirect_items_generator'
+  autoload :RedirectManagerGenerator, 'generators/refinery/redirect_manager_generator'
 
   module RedirectItems
     require 'refinery/redirect_items/engine'

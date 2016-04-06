@@ -2,11 +2,12 @@
 
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
-  s.name              = 'refinerycms-redirect_items'
+  s.name              = 'refinerycms-redirect_manager'
   s.version           = '1.0'
-  s.description       = 'Ruby on Rails Redirect Items extension for Refinery CMS'
+  s.description       = 'Ruby on Rails Redirect Manager extension for Refinery CMS'
   s.date              = '2016-04-06'
-  s.summary           = 'Redirect Items extension for Refinery CMS'
+  s.summary           = 'Redirect Manager extension for Refinery CMS'
+  s.authors           = 'Glass Canvas (glasscanvas.io)'
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
 

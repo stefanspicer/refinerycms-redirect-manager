@@ -1,8 +1,8 @@
 en:
   refinery:
     plugins:
-      redirect_items:
-        title: Redirect Items
+      redirect_manager:
+        title: Redirect Manager
     redirects:
       redirect_items:
         new:
