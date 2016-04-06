@@ -7,10 +7,8 @@ module Refinery
 
         crudify :'refinery/redirects/redirect_item',
                 :title_attribute => 'src_path',
-                :searchable => false,
-                :sortable => false
-
-        # NOTE: when making searchable: remember to add to your model `acts_as_indexed :fields => [:title, :body]`
+                :searchable => true,
+                :sortable => true
 
         def index
           unless searching?

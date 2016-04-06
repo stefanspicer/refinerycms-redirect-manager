@@ -13,7 +13,7 @@ en:
       admin:
         submenu:
           redirect_items:
-            title: Redirect Items
+            title: Redirect Manager
             manage: Manage Redirect Items
             new: Add New Redirect Item
             reorder: Reorder Redirect Items
@@ -47,7 +47,7 @@ en:
             edit_confirmation_email: Edit confirmation email
             toggle_moderation: Moderation
           index:
-            title: Redirect Items
+            title: Redirect Manager
             no_redirect_items: You have not received any redirect items yet.
             inbox: Inbox
             new: New
@@ -107,7 +107,7 @@ en:
   activerecord:
     attributes:
       'refinery/redirects/redirect_item':
-        src_path: Src Path
-        dest_url: Dest Url
-        notes: Notes
+        src_path: A user who browses to... (please start with a '/')
+        dest_url: Will be redirected to... (start with 'http://' for external redirects)
+        notes: Title (optional, for your reference)
         redirect_type: Redirect Type

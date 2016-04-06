@@ -11,26 +11,87 @@
                   :include_object_name => true %>
 
       <div class='form-group'>
-        <%= f.label :src_path, class: 'control-label' -%>
-        <%= f.text_field :src_path, :class => 'form-control' -%>
-      </div>
-
-      <div class='form-group'>
-        <%= f.label :dest_url, class: 'control-label' -%>
-        <%= f.text_field :dest_url, :class => 'form-control' -%>
-      </div>
-
-      <div class='form-group'>
         <%= f.label :notes, class: 'control-label' -%>
         <%= f.text_field :notes, :class => 'form-control' -%>
       </div>
 
       <div class='form-group'>
-        <%= f.label :redirect_type, class: 'control-label' -%>
-        <%= f.number_field :redirect_type, :class => 'form-control' -%>
+        <%= f.label :src_path, class: 'control-label' -%>
+        <div class="input-group">
+          <div class="input-group-addon"><span class="domain-name">http://example.com</span></div>
+          <%= f.text_field :src_path, :class => 'form-control validate-path-only', :placeholder => '/friendly-path' -%>
+        </div>
       </div>
 
-      <%= render '/refinery/admin/form_actions', :f => f, 
+      <div class='form-group'>
+        <%= f.label :dest_url, class: 'control-label' -%>
+        <%= label_tag :dest_external, :class => 'stripped bold' do %>
+          <%= check_box_tag :dest_external -%>
+          External (to a different website)
+        <% end %>
+        <div id="dest_url_group" class="input-group">
+          <div class="input-group-addon domain-addon"><span class="domain-name">http://example.com</span></div>
+          <%= f.text_field :dest_url, :class => 'form-control validate-path-only', :placeholder => '/destination/path' -%>
+        </div>
+      </div>
+
+      <% content_for :javascripts do %>
+        <script type="text/javascript">
+          $(document).on('content-ready', function (e, element) {
+            var $dest_external_checkbox = $(element).find('#dest_external');
+            var $dest_input             = $(element).find('#redirect_item_dest_url');
+            var $dest_dom_addon         = $(element).find('#dest_url_group .domain-addon');
+
+            // validate the paths in the form
+            $(element).find('.validate-path-only').each(function () {
+              $(this).keyup(function (e) {
+                // double check it still has the validate class, user can change it
+                if ($(this).hasClass('validate-path-only') && !$(this).val().startsWith('/')) {
+                  if ($(this).val().startsWith('http')) {
+                    var match = /^http.?:\/\/[^\/]+(.*)$/.exec($(this).val());
+                    $(this).val(match[1]);
+                  }
+                  else {
+                    $(this).val('/' + $(this).val());
+                  }
+                }
+              });
+            });
+
+            function externCheckboxToggled(external) {
+              if (external) {
+                $dest_dom_addon.addClass('hidden-xs-up');
+                $dest_input.attr('placeholder', 'https://example.com/destination/path');
+                $dest_input.removeClass('validate-path-only');
+              }
+              else {
+                $dest_dom_addon.removeClass('hidden-xs-up');
+                $dest_input.attr('placeholder', '/destination/path');
+                $dest_input.addClass('validate-path-only');
+              }
+            }
+
+            // toggl between external & internal destination
+            if ($dest_external_checkbox.length > 0) {
+              $dest_external_checkbox.change(function (e) {
+                externCheckboxToggled($(this).prop('checked'));
+              });
+
+              if (!$dest_input.val().startsWith('/')) {
+                $dest_external_checkbox.prop('checked', true);
+                externCheckboxToggled(true);
+              }
+            }
+          });
+        </script>
+      <% end %>
+
+      <div class='form-group'>
+        <%= f.label :redirect_type, class: 'control-label' -%>
+        <%= f.select :redirect_type, options_for_select([["Default (302)", :temporary], ["Very Permanent (301)", :permanent]], @redirect_item.redirect_type), {}, :class => 'form-control input-lg custom-select' %>
+      </div>
+
+      <%= render '/refinery/admin/form_actions', :f => f,
                  :continue_editing => false,
                  :delete_title => t('delete', :scope => 'refinery.redirects.admin.redirect_items.redirect_item'),
                  :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @redirect_item.src_path) -%>
