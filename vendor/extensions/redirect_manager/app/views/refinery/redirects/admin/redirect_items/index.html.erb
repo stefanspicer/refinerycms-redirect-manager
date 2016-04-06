@@ -1,0 +1,63 @@
+<% content_for :admin_content do %>
+	<section id='admin-page-content' class='admin-index container-fluid'>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="admin-title"><%= t('.title') %></h2>
+        <div class="contextual-menu">
+          <!-- FILTERING -->
+          <!--
+          <div class="dropdown">
+            <button class="btn btn-link-gray" type="button" id="dropdown-filter" data-toggle="dropdown" aria-expanded="true">
+              <i class="icon icon-filter"></i> Filter by: <strong>Cats</strong> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-filter">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Newest</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Oldest </a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Alphabetical</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Reverse Alphabetical</a></li>
+            </ul>
+          </div>
+          -->
+
+          <!-- SORTING -->
+          <!--
+          <div class="dropdown">
+            <button class="btn btn-link-gray" type="button" id="dropdown-sort" data-toggle="dropdown" aria-expanded="true">
+              <i class="icon icon-sort"></i> Sort by: <strong>Newest</strong> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-sort">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="icon icon-sort"></i> Newest</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="icon icon-sort-two"></i> Oldest </a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="icon icon-sort-alpha"></i> Alphabetical</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="icon icon-sort-alpha-two"></i> Reverse Alphabetical</a></li>
+            </ul>
+          </div>
+          -->
+
+          <% if !searching? && ::Refinery::Redirects::Admin::RedirectItemsController.sortable? && ::Refinery::Redirects::RedirectItem.many? %>
+            <button id='reorder_action' class="btn btn-link-gray">
+              <i class="icon icon-reorder bump-down"></i> <strong><%= t('reorder',      :scope => 'refinery.admin.search') %></strong>
+            </button>
+            <button id='reorder_action_done' class="btn btn-link-gray" style="display: none;">
+              <i class="icon icon-reorder bump-down"></i> <strong><%= t('reorder_done', :scope => 'refinery.admin.search') %></strong>
+            </button>
+          <% end %>
+
+
+          <% if ::Refinery::Redirects::Admin::RedirectItemsController.searchable? %>
+            <%= render '/refinery/admin/search', :url => refinery.redirects_admin_redirect_items_path %>
+          <% end %>
+          <a href="<%= refinery.new_redirects_admin_redirect_item_path %>" class="btn btn-primary">
+            <i class="icon icon-add"></i> <span class="hidden-xs-down"><strong>New redirect_item</strong></span>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-12 index-listing">
+        <%= render 'records' %>
+      </div>
+    </div>
+	</section>
+  <%= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Redirects::Admin::RedirectItemsController.sortable? and ::Refinery::Redirects::RedirectItem.many? %>
+
+<% end %>
+<%= render 'refinery/redirects/admin/submenu' %>

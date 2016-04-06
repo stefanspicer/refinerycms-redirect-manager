@@ -1,0 +1,93 @@
+zh-CN:
+  refinery:
+    plugins:
+      redirect_items:
+        title: Redirect Items
+        description: 提供联系方式表格来存放 redirect items
+    redirects:
+      redirect_items:
+        new:
+          send: 发送邮件
+          privacy_policy: 我们重视您的隐私
+        show:
+          other: 其他 Redirect Items
+      admin:
+        redirect_items:
+          actions:
+            create_new: 建立新的 Redirect Item
+            reorder: 对 Redirect Items 重新排序
+            reorder_done: 对 Redirect Items 的重新排序结束
+          records:
+            title: Redirect Items
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Redirect Items yet. Click "Add New Redirect Item" to add your first redirect item.
+            no_items_yet: 目前没有 Redirect Items . 点击 "Add New Redirect Item" 创建一个redirect item.
+          redirect_item:
+            view_live_html: 查看 redirect item 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 redirect item
+            delete: 永久删除 redirect item
+          delete: 永久删除 redirect item
+          redirect_item:
+            read_redirect_item: 阅读这个 redirect item
+            said: 说
+            mark_as_spam: 标记为垃圾邮件
+            mark_as_ham:  移动到收件箱
+          submenu:
+            inbox: 收件箱
+            spam: 垃圾邮件
+            update_notified: 通知相关人员
+            edit_confirmation_email: 编辑确认邮件
+          index:
+            no_redirect_items: 您尚未收到任何 redirect items
+          spam:
+            no_spam: 太棒了！一封垃圾邮件都没有～
+          show:
+            details: 详细
+            age: 岁
+            actions: 操作
+            back_to_all_redirect_items: 返回到全部 redirect items
+            spam: 垃圾信息
+            spam_yes: 是
+            redirect_item: Redirect Item
+            to: 收件人(To)
+            from: 发件人(From)
+            click_to_email: 点击来发送
+            phone: 电话
+            date: 日期
+            message: 信息
+        settings:
+          notification_recipients_form:
+            settings_value_name: 发通知给
+            explanation: 每当有人联系您时， Refinery都会发邮件给您.
+            hint: 当有新的 redirect item 被提交时， Refinery 会发邮件告知您。
+            example: "输入您的Email地址, 形如： jack@work.com, jill@office.com"
+          confirmation_email_form:
+            to: 收件人
+            from: 发件人
+            subject: 主题
+            click_to_edit_subject: 点击编辑主题
+            explanation: 当有人试图联系您时，Refinery 都会发邮件跟他（拥有redirect item 的人）进行确认
+            below_edit_email_sent: 您可以在下面编辑邮件内容
+            the_customer_making_redirect_item:  建立 redirect item 的顾客
+            message: 邮件
+            note: "提示: 您可以在希望出现对方姓名的地方，使用%name%"
+      mailer:
+        notification:
+          greeting: 你好
+          you_recieved_new_redirect_item: 您刚刚收到了一封新 redirect item.
+          redirect_item_starts: --- redirect item 开始---
+          redirect_item_ends: --- redirect item 结束---
+          from: 发件人
+          email: Email
+          phone: 电话
+          message: 正文
+          closing_line: 此致，
+          ps_html:  注：所有您的redirect items都会保存在"Redirect Items"里。这样您可以在任何时间查看它们。
+  activerecord:
+    attributes:
+      'refinery/redirects/redirect_item':
+        src_path: Src Path
+        dest_url: Dest Url
+        notes: Notes
+        redirect_type: Redirect Type

@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="redirect_items">
+    <% @redirect_items.each do |redirect_item| %>
+      <li>
+        <%= link_to redirect_item.src_path, refinery.redirects_redirect_item_path(redirect_item) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

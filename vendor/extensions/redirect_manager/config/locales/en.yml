@@ -1,0 +1,113 @@
+en:
+  refinery:
+    plugins:
+      redirect_items:
+        title: Redirect Items
+    redirects:
+      redirect_items:
+        new:
+          send: Send message
+          privacy_policy: We value your privacy
+        show:
+          other: Other Redirect Items
+      admin:
+        submenu:
+          redirect_items:
+            title: Redirect Items
+            manage: Manage Redirect Items
+            new: Add New Redirect Item
+            reorder: Reorder Redirect Items
+            reorder_done: Done Reordering Redirect Items
+        redirect_items:
+          records:
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Redirect Items yet. Click "New Redirect Item" to add your first redirect item.
+          redirect_item:
+            view_live_html: View this redirect item live <br/><em>(opens in a new window)</em>
+            edit: Edit this redirect item
+            delete: Remove this redirect item forever
+          delete: Remove this redirect item forever
+          approved: The item has been approved.
+          rejected: The item has been rejected.
+          redirect_item:
+            read: Read the redirect item
+            approve: Approve
+            reject: Reject
+            delete: Delete
+            said: said
+            mark_as_spam: Mark as spam
+            mark_as_ham: Move to inbox
+          submenu:
+            inbox: Inbox
+            new: New
+            approved: Approved
+            rejected: Rejected
+            spam: Spam
+            update_notified: Update who gets notified
+            edit_confirmation_email: Edit confirmation email
+            toggle_moderation: Moderation
+          index:
+            title: Redirect Items
+            no_redirect_items: You have not received any redirect items yet.
+            inbox: Inbox
+            new: New
+            approved: Approved
+            rejected: Rejected
+            spam: Spam
+            update_notified: Update who gets notified
+            edit_confirmation_email: Edit confirmation email
+            toggle_moderation: Moderation
+          spam:
+            no_spam: Hooray! You don't have any spam.
+          show:
+            details: Details
+            age: Age
+            actions: Actions
+            back_to_all_redirect_items: Back to all redirect items
+            spam: Spam
+            spam_yes: 'yes'
+            redirect_item: Redirect Item
+            to: To
+            from: From
+            click_to_email: Click to email this address
+            phone: Phone
+            date: Date
+            message: Message
+        settings:
+          confirmation_email_form:
+            to: To
+            from: From
+            subject: Subject
+            click_to_edit_subject: Click here to edit the subject
+            explanation: Every time someone contacts you on your website, Refinery sends out an email to confirm the redirect item with the person who made it.
+            below_edit_email_sent: Below you can edit the email that is sent out.
+            the_customer_making_redirect_item: The customer making the redirect item
+            message: Message
+            note: "Note: place the text %name% where you'd like the customer's name to appear in the email"
+      mailer:
+        notification:
+          greeting: Hi there
+          you_recieved_new_redirect_item: You just received a new redirect item on your website.
+          redirect_item_starts: --- redirect item starts ---
+          redirect_item_ends: --- redirect item ends ---
+          src_path: Src Path
+          dest_url: Dest Url
+          notes: Notes
+          redirect_type: Redirect Type
+          closing_line: Kind Regards
+          ps: P.S. All your redirect items are stored in the "Redirect Items" section of Refinery should you ever want to view it later there.
+    admin:
+      settings:
+        form:
+          redirect_item_notification_recipients:
+            title: Who to Notify
+            settings_value_name: Send notifications to
+            hint: When a new redirect item is submitted, Refinery will send an email notification to you.
+            example: "Enter your email address(es) like: jack@work.com, jill@office.com"
+  activerecord:
+    attributes:
+      'refinery/redirects/redirect_item':
+        src_path: Src Path
+        dest_url: Dest Url
+        notes: Notes
+        redirect_type: Redirect Type

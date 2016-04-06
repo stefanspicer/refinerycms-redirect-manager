@@ -1,0 +1,42 @@
+<%= render 'refinery/redirects/admin/submenu' %>
+
+<% content_for :admin_content do %>
+
+<div class="admin-page container-fluid">
+ <div class="row">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+    <%= form_for [refinery, :redirects_admin, @redirect_item], :html => {:class => "ajax-form"} do |f| -%>
+      <%= render '/refinery/admin/error_messages',
+                  :object => @redirect_item,
+                  :include_object_name => true %>
+
+      <div class='form-group'>
+        <%= f.label :src_path, class: 'control-label' -%>
+        <%= f.text_field :src_path, :class => 'form-control' -%>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :dest_url, class: 'control-label' -%>
+        <%= f.text_field :dest_url, :class => 'form-control' -%>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :notes, class: 'control-label' -%>
+        <%= f.text_field :notes, :class => 'form-control' -%>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :redirect_type, class: 'control-label' -%>
+        <%= f.number_field :redirect_type, :class => 'form-control' -%>
+      </div>
+
+      <%= render '/refinery/admin/form_actions', :f => f, 
+                 :continue_editing => false,
+                 :delete_title => t('delete', :scope => 'refinery.redirects.admin.redirect_items.redirect_item'),
+                 :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @redirect_item.src_path) -%>
+    <% end # form_for -%>
+  </div>
+ </div>
+</div>
+
+<% end # content_for :admin_content %>

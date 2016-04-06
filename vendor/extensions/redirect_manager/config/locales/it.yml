@@ -1,0 +1,78 @@
+it:
+  refinery:
+    plugins:
+      redirect_items:
+        title: Redirect Items
+    redirects:
+      redirect_items:
+        show:
+          other: Altri Redirect Items
+        new:
+          header_message: "Un problema si è verificato"
+          message: "I seguenti problemi devono essere corretti:"
+          send: Invia messaggio
+          privacy_policy: "Noi diamo valore alla tua privacy"
+      admin:
+        redirect_items:
+          actions:
+            create_new: Aggiungi Nuovo Redirect Item
+            reorder: Riordina Redirect Items
+            reorder_done: Termina il Riordino di Redirect Items
+          records:
+            title: Redirect Items
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Redirect Items. Clicca "Aggiungi Nuovo Redirect Item" per aggiungere il tuo primo redirect item.
+          redirect_item:
+            view_live_html: Guarda live questo redirect item <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo redirect item
+            delete: Rimuovi per sempre questo redirect item
+            move_redirect_item_to_closed: Spostare questa inchiesta chiusa
+            move_redirect_item_to_open: Spostare questa indagine per aprire
+            read_redirect_item: Leggi l'inchiesta
+            remove_redirect_item: "Sei sicuro di voler cancellare la richiesta di '%{name}'?"
+            title: Redirect Items
+          toggle_status:
+            closed: "Inchiesta '%{redirect_item}' è chiuso"
+            reopened: "Inchiesta '%{redirect_item}' si riapre"
+          index:
+            no_redirect_items: Non hai ancora ricevuto alcuna richiesta in.
+          show:
+            details: Dettagli
+            click_to_email: Clicca per e-mail
+            status: Stato
+            open: Aperto
+            closed: Chiuso
+            age: Età
+            actions: Azioni
+            back_to_all_redirect_items: Torna a tutte le richieste
+            redirect_item: Redirect Item
+          submenu:
+            update_notified: Aggiornamento chi viene notificata
+            edit_confirmation_email: Modifica email di conferma
+        settings:
+          update:
+            updated: "'%{setting}' stato aggiornato con successo."
+          notification_recipients_form:
+            settings_value_name: Invia a notifiche
+            explanation: "Ogni volta che qualcuno ti contatti sul suo sito web, Refinery invia una mail a dire che c'è una nuova indagine."
+            hint: "Inserisci un indirizzo email di cui sopra. Vuoi la notifica di andare a più di una persona? Inserisci più indirizzi email separati da virgole."
+            example: "E.g. me@domain.com, friend@msn.com, workmate@work.com"
+          confirmation_email_form:
+            to: A
+            from: Da
+            subject: Soggetto
+            click_to_edit_subject: Clicca qui per modificare l'oggetto
+            explanation: "Ogni volta che qualcuno ti contatti sul suo sito web, Refinery invia una e-mail per confermare la richiesta con la persona che ha reso."
+            below_edit_email_sent: Qui di seguito è possibile modificare l'e-mail che viene inviata.
+            the_customer_making_redirect_item: Il cliente rendendo l'indagine
+            message: Messaggio
+            note: "Nota: inserire il testo %name% dove desideri che il nome del cliente a comparire nella e-mail"
+          subject_form:
+            subject_value_name: Soggetto
+  activerecord:
+    attributes:
+      'refinery/redirects/redirect_item':
+        src_path: Src Path
+        dest_url: Dest Url
+        notes: Notes
+        redirect_type: Redirect Type

@@ -1,0 +1,91 @@
+nl:
+  refinery:
+    plugins:
+      redirect_items:
+        title: Redirect Items
+        description: Contactformulier en beheer van redirect items
+    redirects:
+      redirect_items:
+        new:
+          send: Bericht verzenden
+          privacy_policy: Wij respecteren uw privacy
+        show:
+          other: Andere Redirect Items
+      admin:
+        redirect_items:
+          actions:
+            create_new: Nieuwe Redirect Item toevoegen
+            reorder: De volgorde van de Redirect Items wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Redirect Item-volgorde
+          records:
+            title: Redirect Items
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Redirect Items. Druk op 'Nieuwe Redirect Item toevoegen' om de eerste toe te voegen.
+          redirect_item:
+            view_live_html: Deze redirect item op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze redirect item
+            delete: Deze redirect item definitief verwijderen
+          delete: Deze redirect item definitief verwijderen
+          redirect_item:
+            read_redirect_item: Lees de redirect item
+            said: zei
+            mark_as_spam: Als spam markeren
+            mark_as_ham: Naar de inbox verplaatsen
+          submenu:
+            inbox: Inbox
+            spam: Spam
+            update_notified: Wijzigen wie op de hoogte wordt gesteld
+            edit_confirmation_email: Bevestigings-e-mail bewerken
+          index:
+            no_redirect_items: U heeft nog geen redirect items ontvangen.
+          spam:
+            no_spam: Hoera! U heeft geen spam.
+          show:
+            details: Details
+            age: Leeftijd
+            actions: Acties
+            back_to_all_redirect_items: Terug naar alle redirect items
+            spam: Spam
+            spam_yes: 'ja'
+            redirect_item: Redirect Item
+            to: Aan
+            from: Van
+            click_to_email: Klik hier om een e-mail te sturen naar dit adres
+            phone: Telefoonnummer
+            date: Datum
+            message: Bericht
+        settings:
+          notification_recipients_form:
+            settings_value_name: Stuur notificaties naar
+            explanation: "Telkens wanneer iemand het contactformulier invult op uw website, stuurt Refinery een bevestiging naar de verzender."
+            hint: "Wilt u naar meerdere adressen notificaties sturen? Vul dan meerdere e-mailadressen in gescheiden door komma's"
+            example: "Bijvoorbeeld: jan@werk.nl, els@kantoor.nl"
+          confirmation_email_form:
+            to: Aan
+            from: Van
+            subject: Onderwerp
+            click_to_edit_subject: Klik hier om het onderwerp bewerken
+            explanation: "Telkens wanneer iemand het contactformulier invult op uw website, stuurt Refinery een bevestiging naar de verzender."
+            below_edit_email_sent: Hieronder kunt u de email die verzonden wordt bewerken.
+            the_customer_making_redirect_item: De persoon die de redirect item heeft ingezonden
+            message: Bericht
+            note: "N.B.: plaats de tekst %name% overal in de email waar u de naam van de klant persoon wilt invoegen"
+      mailer:
+        notification:
+          greeting: Hallo
+          you_recieved_new_redirect_item: U hebt een nieuwe redirect item ontvangen via de website.
+          redirect_item_starts: --- begin van de redirect item ---
+          redirect_item_ends: --- einde van de redirect item ---
+          from: Van
+          email: E-mail
+          phone: Telefoon
+          message: Bericht
+          closing_line: Met vriendelijke groet,
+          ps_html: P.S. Alle redirect items worden opgeslagen in de sectie Redirect Items van Refinery.
+  activerecord:
+    attributes:
+      'refinery/redirects/redirect_item':
+        src_path: Src Path
+        dest_url: Dest Url
+        notes: Notes
+        redirect_type: Redirect Type

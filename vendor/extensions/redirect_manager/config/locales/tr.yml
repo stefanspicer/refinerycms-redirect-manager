@@ -1,0 +1,91 @@
+tr:
+  refinery:
+    plugins:
+      redirect_items:
+        title: Redirect Items
+        description: Iletisim formu ve kayitlarin temini redirect items
+    redirects:
+      redirect_items:
+        new:
+          send: Mesaj Gonder
+          privacy_policy: Mahremiyetinize onem veriyoruz.
+        show:
+          other: Diger Redirect Items
+      admin:
+        redirect_items:
+          actions:
+            create_new: Yeni Ekle Redirect Item
+            reorder: Tekrar sirala Redirect Items
+            reorder_done: Tekrar siralama tamamlandiRedirect Items
+          records:
+            title: Redirect Items
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Redirect Items yok henuz.  Tikla "Yeni Ekle Redirect Item" eklemek senin ilk redirect item.
+          redirect_item:
+            view_live_html: Bunu canlu redirect item goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle redirect item
+            delete: Bunu Sil redirect item sonsuza dek
+          delete: Sonsuza dek redirect item sil
+          redirect_item:
+            read_redirect_item: Read the redirect item
+            said: dedi
+            mark_as_spam: Spam olarak isaretle
+            mark_as_ham: Gelen kutusuna tasi
+          submenu:
+            inbox: Gelen Kutusu
+            spam: Istenmeyen E-posta
+            update_notified: Uyari alanlari guncelle
+            edit_confirmation_email: Dogrulama e-posta'sini duzenle
+          index:
+            no_redirect_items: Henuz  Herhangi bir  redirect items almadiniz.
+          spam:
+            no_spam: Oley! Herhangi bir istenmeyen e-posta yok
+          show:
+            details: Detay
+            age: Yas
+            actions: Eylemler
+            back_to_all_redirect_items: Geri don tum redirect items
+            spam: Istenmeyen E-posta
+            spam_yes: 'evet'
+            redirect_item: Redirect Item
+            to: Kime
+            from: Kimden
+            click_to_email: Bu adrese e-posta'layin
+            phone: Telefon
+            date: Tarih
+            message: Mesaj
+        settings:
+          notification_recipients_form:
+            settings_value_name: Bildirimleri gonderecegin  adres
+            explanation: Her kim olursa seninle web sitesi uzerinden iletisime gecen, Refinery yeni bir redirect item  diye e-posta atar.
+            hint: Yeni Bir redirect item teslim edildiginde, Refinery bir e-posta bildirisi yollayacak sana.
+            example: "Lutfen e-posta adres(ler)inizi giriniz. Ornek olarak: jack@work.com, jill@office.com gibi"
+          confirmation_email_form:
+            to: Kime
+            from: Kimden
+            subject: Baslik
+            click_to_edit_subject: Basligi degistirmek icin buraya tiklayiniz
+            explanation: Her kim olursa seninle web siten uzerinden iletisime gecen,Refinery yeni bir dogrulama postasi gonderir redirect item yapan kisiye
+            below_edit_email_sent: Asagida gonderilen e-postayi duzenleyebilirsin.
+            the_customer_making_redirect_item: Musteri redirect item yapiyor
+            message: Mesaj
+            note: "Not: metini hizala %name% nerede musterinizin e-posta adresi gibi gozukmesini istiyorsan"
+      mailer:
+        notification:
+          greeting: Selamlar
+          you_recieved_new_redirect_item: You just received a new redirect item on your website.
+          redirect_item_starts: --- redirect item starts ---
+          redirect_item_ends: --- redirect item ends ---
+          from: Kimden
+          email: E-posta
+          phone: Telefon
+          message: Mesaj
+          closing_line: Saygilarimizla
+          ps_html: Senin butun redirect items kayitli oldugu yer "Redirect Items" burasidir eger ileride kullanmak istersen
+  activerecord:
+    attributes:
+      'refinery/redirects/redirect_item':
+        src_path: Src Path
+        dest_url: Dest Url
+        notes: Notes
+        redirect_type: Redirect Type

@@ -1,0 +1,91 @@
+fr:
+  refinery:
+    plugins:
+      redirect_items:
+        title: Redirect Items
+        description: Fournit un formulaire de contact et gère les demandes de contacts.
+    redirects:
+      redirect_items:
+        new:
+          send: Envoyer un message
+          privacy_policy: Nous respectons votre vie privée
+        show:
+          other: Autres Redirect Items
+      admin:
+        redirect_items:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Redirect Item
+            reorder: Réordonner les Redirect Items
+            reorder_done: Fin de réordonnancement des Redirect Items
+          records:
+            title: Redirect Items
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Redirect Item. Cliquer sur "Créer un(e) nouve(au/l/lle) Redirect Item" pour créer votre premi(er/ère) redirect item.'
+          redirect_item:
+            view_live_html: Voir ce(t/tte) redirect item <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) redirect item
+            delete: Supprimer définitivement ce(t/tte) redirect item
+          delete: Supprimer définitivement cette requête
+          redirect_item:
+            read_redirect_item: Lire la requête
+            said: a dit
+            mark_as_spam: Marquer comme spam
+            mark_as_ham: Déplacer dans la boîte de réception
+          submenu:
+            inbox: Boîte de réception
+            spam: Spam
+            update_notified: Choisir qui reçoit les notifications
+            edit_confirmation_email: Modifier l'e-mail de confirmation
+          index:
+            no_redirect_items: Vous n'avez reçu aucune requête.
+          spam:
+            no_spam: Vous n'avez aucun spam.
+          show:
+            details: Détails
+            age: Age
+            actions: Actions
+            back_to_all_redirect_items: Retourner à la liste des requêtes
+            spam: Spam
+            spam_yes: 'oui'
+            redirect_item: Redirect Item
+            to: À
+            from: De
+            click_to_email: Cliquer ici pour enyoyer un e-mail à cette adresse
+            phone: Téléphone
+            date: Date
+            message: Message
+        settings:
+          notification_recipients_form:
+            settings_value_name: Envoyer une notification à
+            explanation: Chaque fois qu'une demande de contact est rédigée sur votre site, Refinery envoie un e-mail pour le signaler.
+            hint: Quand une nouvelle requête est soumise, Refinery vous envoie un e-mail d'avertissement.
+            example: "Entrez votre/vos addresse(s) e-mail comme il suit: jack@work.com, jill@office.com"
+          confirmation_email_form:
+            to: À
+            from: De
+            subject: Sujet
+            click_to_edit_subject: Cliquez ici pour modifier le sujet
+            explanation: Chaque fois qu'une demande de contact est rédigée sur votre site, Refinery envoie un e-mail pour le signaler.
+            below_edit_email_sent: Ci-dessous vous pouvez modifier l'e-mail qui sera envoyé.
+            the_customer_making_redirect_item: Le client à l'origine de la requête
+            message: Message
+            note: "Note: Utilisez %name% à l'endroit où vous souhaitez voir apparaître le nom du client dans l'e-mail"
+      mailer:
+        notification:
+          greeting: Bonjour
+          you_recieved_new_redirect_item: Vous avez reçu une nouvelle requête sur votre site.
+          redirect_item_starts: --- Début des requêtes ---
+          redirect_item_ends: --- Fin des requêtes ---
+          from: De
+          email: E-mail
+          phone: Téléphone
+          message: Message
+          closing_line: Cordialement
+          ps_html: P.S. Toutes les requêtes sont stockées dans la section 'Requêtes' afin que vous puissiez les consulter ultérieurement.
+  activerecord:
+    attributes:
+      'refinery/redirects/redirect_item':
+        src_path: Src Path
+        dest_url: Dest Url
+        notes: Notes
+        redirect_type: Redirect Type

@@ -1,0 +1,91 @@
+sk:
+  refinery:
+    plugins:
+      redirect_items:
+        title: Redirect Items
+        description: Poskytuje kontaktný formulár a zaznamenáva redirect items
+    redirects:
+      redirect_items:
+        new:
+          send: Odoslať správu
+          privacy_policy: Chránime vaše súkromie
+        show:
+          other: Daľšie Redirect Items
+      admin:
+        redirect_items:
+          actions:
+            create_new: Pridať Redirect Item
+            reorder: Preusporiadať Redirect Items
+            reorder_done: Koniec radenia Redirect Items
+          records:
+            title: Redirect Items
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Redirect Items. Kliknite na "Pridať Redirect Item" pre pridanie prvého redirect item.
+          redirect_item:
+            view_live_html: Zobraziť náhľad redirect item<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť redirect item
+            delete: Zmazať redirect item
+          delete: Trvalo odstrániť redirect item
+          redirect_item:
+            read_redirect_item: Prečítať redirect item
+            said: povedal
+            mark_as_spam: Označiť ako spam
+            mark_as_ham: Označiť ako prečítané
+          submenu:
+            inbox: Inbox
+            spam: Spam
+            update_notified: Upraviť zoznam notifikovaných
+            edit_confirmation_email: Upraviť potvrdzovací e-mail
+          index:
+            no_redirect_items: Zatiaľ ste neobdržali žiadne redirect items.
+          spam:
+            no_spam: Hurá! Nemáte žiaden spam.
+          show:
+            details: Podrobnosti
+            age: Vek
+            actions: Akcie
+            back_to_all_redirect_items: Späť na všetky redirect items
+            spam: Spam
+            spam_yes: 'áno'
+            redirect_item: Redirect Item
+            to: Komu
+            from: Od
+            click_to_email: Kliknite pre odoslanie tejto adresy e-mailom
+            phone: Telefón
+            date: Dátum
+            message: Správa
+        settings:
+          notification_recipients_form:
+            settings_value_name: Poslať upozornenie pre
+            explanation: Zakaždým, keď Vás niekto kontaktuje cez vaše webové stránky, Refinery odošle e-mail s upozornením na nový redirect item.
+            hint: Keď je odoslaný nový redirect item, Refinery odošle upozornenie na Váš e-mail.
+            example: "Zadajte e-mailovú adresu(y) ako: jack@work.com, jill@office.com"
+          confirmation_email_form:
+            to: Komu
+            from: Od
+            subject: Predmet
+            click_to_edit_subject: Kliknite tu ak chcete upraviť predmet
+            explanation: Zakaždým, keď Vás niekto kontaktuje cez vaše webové stránky, Refinery odošle e-mail s potvrdením o prijatí odosielateľovi redirect item.
+            below_edit_email_sent: Nižšie môžete upraviť e-mail, ktorý je odosielaný.
+            the_customer_making_redirect_item: Klient robiť redirect item
+            message: Správa
+            note: "Poznámka: umiestniťe text %name%, pre určenie pozície mena klienta v e-maile"
+      mailer:
+        notification:
+          greeting: Ahoj
+          you_recieved_new_redirect_item: Práve ste obdržali nový redirect item na vašej webové stránke.
+          redirect_item_starts: --- redirect item začiatok ---
+          redirect_item_ends: --- redirect item koniec ---
+          from: Od
+          email: E-mail
+          phone: Telefón
+          message: Správa
+          closing_line: S pozdravom
+          ps_html: P.S. Všetky vaše redirect items sú uložené v "Redirect Items" sekcii v Refinery, ak by ste ich chceli zobraziť neskôr.
+  activerecord:
+    attributes:
+      'refinery/redirects/redirect_item':
+        src_path: Src Path
+        dest_url: Dest Url
+        notes: Notes
+        redirect_type: Redirect Type

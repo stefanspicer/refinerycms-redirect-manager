@@ -1,0 +1,86 @@
+nb:
+  refinery:
+    plugins:
+      redirect_items:
+        title: Redirect Items
+    redirects:
+      redirect_items:
+        show:
+          other: Andre Redirect Items
+        new:
+          header_message: "Ooops, det oppsto et lite problem"
+          message: "Følgende problemer må løses:"
+          send: Send melding
+          privacy_policy: "Vi respekterer ditt privatliv"
+      admin:
+        redirect_items:
+          actions:
+            create_new: Lag en ny Redirect Item
+            reorder: Endre rekkefølgen på Redirect Items
+            reorder_done: Ferdig å endre rekkefølgen Redirect Items
+          records:
+            title: Redirect Items
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Redirect Items enda. Klikk på "Lag en ny Redirect Item" for å legge til din første redirect item.
+          redirect_item:
+            view_live_html: Vis hvordan denne redirect item ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne redirect item
+            delete: Fjern denne redirect item permanent
+            move_redirect_item_to_closed: Flytt denne forespørselen til lukket
+            move_redirect_item_to_open: Flytt denne forespørselen til åpen
+            read_redirect_item: Les forespørselen
+            remove_redirect_item: "Er du sikker på at du ønsker å slette denne forespørselen fra '%{name}'?"
+            title: Redirect Items
+            said: sa
+            mark_as_spam: Merk som søppel
+            mark_as_ham: Flytt til innboksen
+          toggle_status:
+            closed: "Forespørselen '%{redirect_item}' er lukket"
+            reopened: "Forespørselen '%{redirect_item}' er gjenåpnet"
+          submenu:
+            update_notified: Oppdater hvem som blir informert
+            edit_confirmation_email: Rediger bekreftelses e-posten
+          index:
+            no_redirect_items: Du har ikke mottatt noen forespørsler enda.
+          spam:
+            no_spam: Hurra! Du har ikke noen søppelpost.
+          show:
+            details: Detaljer
+            click_to_email: Trykk for å sende e-post
+            status: Status
+            open: Åpen
+            closed: Lukket
+            age: Alder
+            actions: Handlinger
+            back_to_all_redirect_items: Tilbake til alle forespørslene
+            spam: Søppel
+            spam_yes: 'ja'
+            redirect_item: Redirect Item
+            title: Redirect Items
+        settings:
+          update:
+            updated: "'%{setting}' ble endret."
+          notification_recipients_form:
+            settings_value_name: Send oppdateringer til
+            explanation: "Hver gang noen kontakter deg på websiden din, så vil Refinery sende ut en e-post for å si ifra at det er ny forespørsel."
+            hint: "Når en ny forespørsel er lagt inn, så vil Refinery sende deg en e-post for å si i fra."
+            example: "Legg inn din(e) e-post adresse(r) slik: jack@jobb.no, jill@kontoret.no"
+          confirmation_email_form:
+            to: Til
+            from: Fra
+            subject: Emne
+            click_to_edit_subject: Trykk her for å redigere emnet
+            explanation: "Hver gang noen sender inn en forespørsel gjennom din webside, så sender Refinery en e-post til personen som la inn forespørselen for å bekrefte at forespørselen er mottatt."
+            below_edit_email_sent: Du kan redigere e-posten som blir sendt ut nedenfor.
+            the_customer_making_redirect_item: Kunden som skrev forespørselen
+            message: Melding
+            note: "Merk: plasser teksten %name% der du ønsker at kundens navn skal vises i e-posten"
+          subject_form:
+            subject_value_name: Enme
+  activerecord:
+    attributes:
+      'refinery/redirects/redirect_item':
+        src_path: Src Path
+        dest_url: Dest Url
+        notes: Notes
+        redirect_type: Redirect Type
